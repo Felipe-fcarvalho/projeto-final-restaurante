@@ -1,7 +1,19 @@
+import GlobalStyles from './styles/GlobalStyles'
+import Header from './components/Header'
+import { ThemeProvider } from 'styled-components'
+import theme from './styles/theme'
+import Menu from './container/Menu'
+
 function App() {
   return (
     <>
-      <div className="container">Olá mundo!</div>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <div className="container">
+          <Menu />
+        </div>
+      </ThemeProvider>
     </>
   )
 }

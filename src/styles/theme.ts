@@ -6,7 +6,7 @@ const theme = {
     bgCardPrimary: '#FFF',
     bgCardSecondary: '#E66767',
     btnPrimary: '#E66767',
-    bntSecondary: '#FFEBD9',
+    btnSecondary: '#FFEBD9',
     textPrimary: '#E66767',
     textSecondary: '#FFEBD9',
     textWhite: '#FFF',
