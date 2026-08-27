@@ -1,11 +1,19 @@
 import styled from 'styled-components'
+import bgPattern from '../../assets/images/bg-pattern.png'
 
 export const Header = styled.header`
-  height: 368px;
   width: 100%;
+  min-height: 368px;
   padding: ${({ theme }) => theme.padding.xxl};
   background-color: ${({ theme }) => theme.color.secondary};
+  background: url(${bgPattern}) center repeat;
   text-align: center;
+`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 138px;
 `
 
 export const Logo = styled.img`
@@ -14,15 +22,10 @@ export const Logo = styled.img`
 `
 
 export const Title = styled.h1`
-  max-width: 600px;
+  max-width: 500px;
   color: ${({ theme }) => theme.color.textPrimary};
-  font-style: ${({ theme }) => theme.font.titlePage};
-  font-size: ${({ theme }) => theme.font.sizeBlack};
-`
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 150px;
+  font-size: ${({ theme }) => theme.font.titlePage};
+  font-weight: ${({ theme }) => theme.font.sizeBlack};
+  line-height: 1.2;
+  text-align: center;
 `
