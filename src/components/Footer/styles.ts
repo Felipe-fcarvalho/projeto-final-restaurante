@@ -28,7 +28,7 @@ export const Text = styled.p`
   margin-top: 80px;
   margin-bottom: 40px;
   color: ${({ theme }) => theme.color.primary};
-  font-weight: ${({ theme }) => theme.font.sizeRegular};
+  font-weight: ${({ theme }) => theme.font.regular};
   font-size: 10px;
   line-height: 100%;
   text-align: center;

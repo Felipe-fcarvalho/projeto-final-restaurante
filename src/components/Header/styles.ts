@@ -25,7 +25,7 @@ export const Title = styled.h1`
   max-width: 500px;
   color: ${({ theme }) => theme.color.textPrimary};
   font-size: ${({ theme }) => theme.font.titlePage};
-  font-weight: ${({ theme }) => theme.font.sizeBlack};
+  font-weight: ${({ theme }) => theme.font.black};
   line-height: 1.2;
   text-align: center;
 `

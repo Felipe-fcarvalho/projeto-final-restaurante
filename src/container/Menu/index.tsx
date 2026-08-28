@@ -1,55 +1,35 @@
-import CardMenu from '../../components/CardMenu'
-import sushi from '../../assets/images/sushi.png'
-import macarronada from '../../assets/images/macarronada.png'
+import { useEffect, useState } from 'react'
+import { getProdutosPorRestaurante } from '../../services/produtosApi'
+import type { Produto } from '../../model/Produto'
 import * as S from './styles'
 
-const Menu = () => (
-  <>
-    <S.List>
-      <CardMenu
-        image={sushi}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-      <CardMenu
-        image={macarronada}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-      <CardMenu
-        image={macarronada}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-      <CardMenu
-        image={macarronada}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-      <CardMenu
-        image={macarronada}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-      <CardMenu
-        image={macarronada}
-        title="Hioki Sushi"
-        rate={4.9}
-        infos={['Destaque da semana', 'Japonesa']}
-        description="Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida."
-      />
-    </S.List>
-  </>
-)
+type Props = {
+  restauranteId: number
+}
+
+const Menu = ({ restauranteId }: Props) => {
+  const [produtos, setProdutos] = useState<Produto[]>([])
+
+  useEffect(() => {
+    getProdutosPorRestaurante(restauranteId).then(setProdutos)
+  }, [restauranteId])
+
+  return (
+    <S.Section>
+      <div className="container">
+        <S.List>
+          {produtos.map((item) => (
+            <S.Card key={item.id}>
+              <img src={item.foto} alt={item.nome} />
+              <h3>{item.nome}</h3>
+              <p>{item.descricao}</p>
+              <button>Adicionar ao carrinho</button>
+            </S.Card>
+          ))}
+        </S.List>
+      </div>
+    </S.Section>
+  )
+}
 
 export default Menu
