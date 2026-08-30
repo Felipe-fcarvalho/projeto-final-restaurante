@@ -3,14 +3,14 @@ import theme from '../../styles/theme'
 
 export const Section = styled.section`
   background-color: ${theme.color.bgPage};
-  padding-top: 56px;
+  padding-top: 80px;
   padding-bottom: 120px;
 `
 
 export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: ${theme.padding.xxl};
+  gap: ${theme.padding.lg};
 `
 
 export const Card = styled.div`
@@ -18,33 +18,34 @@ export const Card = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  padding: ${theme.padding.sm};
 
   img {
     width: 100%;
-    height: 167px;
+    height: 160px;
     object-fit: cover;
-    padding: ${theme.padding.sm};
   }
 
   h3 {
     color: ${theme.color.textSecondary};
     font-size: ${theme.font.titleCardSecondary};
     font-weight: ${theme.font.bold};
-    padding: 0 ${theme.padding.sm};
+    padding: ${theme.padding.sm} 0;
   }
 
   p {
     color: ${theme.color.textSecondary};
     font-size: ${theme.font.text};
     font-weight: ${theme.font.regular};
-    padding: ${theme.padding.sm};
+    padding: ${theme.padding.sm} 0;
     line-height: 22px;
     flex: 1;
+    overflow: hidden;
   }
 
   button {
-    margin: ${theme.padding.sm};
-    padding: 4px;
+    padding: ${theme.padding.sm} 0;
     border: none;
     background-color: ${theme.color.btnSecondary};
     color: ${theme.color.textPrimary};

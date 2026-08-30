@@ -22,7 +22,7 @@ export const Hero = styled.div<HeroProps>`
   }
 
   span {
-    color: ${theme.color.textWhite};
+    color: ${theme.color.textSecondary};
     font-size: ${theme.font.titlePage};
     font-weight: ${theme.font.thin};
     opacity: 0.85;
@@ -31,7 +31,7 @@ export const Hero = styled.div<HeroProps>`
   }
 
   h2 {
-    color: ${theme.color.textWhite};
+    color: ${theme.color.textSecondary};
     font-size: ${theme.font.titlePage};
     font-weight: ${theme.font.black};
   }

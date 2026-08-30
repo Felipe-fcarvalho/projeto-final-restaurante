@@ -2,28 +2,30 @@ import { Link } from 'react-router-dom'
 import type { Restaurante } from '../../model/Restaurante'
 import * as S from './styles'
 
+const capitalizar = (texto: string) =>
+  texto.charAt(0).toUpperCase() + texto.slice(1)
+
 const CardRestaurante = ({
   id,
   titulo,
   descricao,
-  imagem,
-  nota,
-  infos,
+  capa,
+  avaliacao,
+  tipo,
+  destacado,
 }: Restaurante) => (
   <S.Card>
-    <S.Image src={imagem} alt={titulo} />
+    <S.Image src={capa} alt={titulo} />
     <S.InfoContainer>
       <S.CardTag>
-        {infos.map((info) => (
-          <S.Tag key={info}>{info}</S.Tag>
-        ))}
+        {destacado && <S.Tag>Destaque da semana</S.Tag>}
+        <S.Tag>{capitalizar(tipo)}</S.Tag>
       </S.CardTag>
       <S.Top>
         <h3>{titulo}</h3>
-        <S.Rate>
-          <span>{nota}</span>
-          <img src="/src/assets/icons/star.svg" alt="estrela" />
-        </S.Rate>
+        <span>
+          {avaliacao} <img src="/src/assets/icons/star.svg" alt="estrela" />
+        </span>
       </S.Top>
       <p>{descricao}</p>
       <Link to={`/perfil/${id}`}>Saiba mais</Link>
