@@ -24,7 +24,7 @@ const CardRestaurante = ({
       <S.Top>
         <h3>{titulo}</h3>
         <span>
-          {avaliacao} <img src="/src/assets/icons/star.svg" alt="estrela" />
+          {avaliacao} <img src="./src/assets/icons/star.svg" alt="estrela" />
         </span>
       </S.Top>
       <p>{descricao}</p>
