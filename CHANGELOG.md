@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.4.2] - 2026-08-31
+### Fixed
+- Ícone de estrela.
+
 ## [1.4.1] - 2026-08-29
 ### Added
 - Modal;
