@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Restaurante } from '../../model/Restaurante'
+import estrela from '../../assets/icons/star.svg'
 import * as S from './styles'
 
 const capitalizar = (texto: string) =>
@@ -24,7 +25,7 @@ const CardRestaurante = ({
       <S.Top>
         <h3>{titulo}</h3>
         <span>
-          {avaliacao} <img src="./src/assets/icons/star.svg" alt="estrela" />
+          {avaliacao} <img src={estrela} alt="estrela" />
         </span>
       </S.Top>
       <p>{descricao}</p>
