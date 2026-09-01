@@ -16,7 +16,7 @@ export const Modal = styled.div`
   position: relative;
   display: flex;
   gap: ${theme.padding.lg};
-  max-width: 900px;
+  max-width: 1024px;
   width: 100%;
   background-color: ${theme.color.bgCardSecondary};
   padding: ${theme.padding.lg};
@@ -27,21 +27,21 @@ export const Modal = styled.div`
 `
 
 export const Fechar = styled.button`
+  width: 16px;
+  height: 16px;
   position: absolute;
-  top: -4px;
+  top: ${theme.padding.sm};
   right: ${theme.padding.sm};
   background: none;
   border: none;
   color: ${theme.color.textSecondary};
-  font-size: 1.5rem;
-  font-weight: ${theme.font.thin};
   cursor: pointer;
 `
 
 export const Foto = styled.img`
-  width: 320px;
+  width: 280px;
+  height: 280px;
   max-width: 40%;
-  height: auto;
   object-fit: cover;
 
   @media (max-width: 640px) {
@@ -56,27 +56,28 @@ export const Conteudo = styled.div`
   gap: ${theme.padding.sm};
 
   h3 {
-    color: ${theme.color.textSecondary};
+    color: ${theme.color.textWhite};
     font-size: ${theme.font.titleCardPrimary};
     font-weight: ${theme.font.bold};
   }
 
   p {
-    color: ${theme.color.textSecondary};
+    color: ${theme.color.textWhite};
     font-size: ${theme.font.text};
     font-weight: ${theme.font.regular};
     line-height: 22px;
   }
 
   span {
-    color: ${theme.color.textSecondary};
+    margin-top: 36px;
+    color: ${theme.color.textWhite};
     font-size: ${theme.font.text};
   }
 
   button {
     align-self: flex-start;
     margin-top: ${theme.padding.sm};
-    padding: ${theme.padding.sm} ${theme.padding.md};
+    padding: 4px 6px;
     background-color: ${theme.color.btnSecondary};
     color: ${theme.color.textPrimary};
     font-size: ${theme.font.btn};

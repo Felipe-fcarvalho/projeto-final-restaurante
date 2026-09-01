@@ -18,7 +18,6 @@ export const Card = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   padding: ${theme.padding.sm};
 
   img {
