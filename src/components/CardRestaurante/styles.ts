@@ -12,8 +12,8 @@ export const Card = styled.div`
 `
 
 export const Image = styled.img`
-  width: 100%;
-  overflow: hidden;
+  width: 472px;
+  height: 217px;
   object-fit: cover;
 `
 
@@ -36,22 +36,26 @@ export const Tag = styled.span`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: ${theme.padding.sm};
-  gap: ${theme.padding.sm};
   border: 1px solid ${theme.color.primary};
   border-top: none;
-  flex: 1;
+  overflow-y: hidden;
 
   p {
     color: ${theme.color.textPrimary};
     font-size: ${theme.font.text};
     font-weight: ${theme.font.regular};
     line-height: 22px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   a {
+    margin-top: auto;
     align-self: flex-start;
-    margin-top: ${theme.padding.md};
     padding: 4px 6px;
     background-color: ${theme.color.btnPrimary};
     color: ${theme.color.btnSecondary};
