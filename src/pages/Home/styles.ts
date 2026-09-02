@@ -12,3 +12,8 @@ export const Lista = styled.section`
     gap: 80px 48px;
   }
 `
+export const Message = styled.p`
+  color: ${theme.color.textPrimary};
+  font-size: ${theme.font.header};
+  font-weight: ${theme.font.black};
+`

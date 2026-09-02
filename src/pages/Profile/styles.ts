@@ -36,3 +36,9 @@ export const Hero = styled.div<HeroProps>`
     font-weight: ${theme.font.black};
   }
 `
+
+export const Message = styled.p`
+  color: ${theme.color.textSecondary};
+  font-size: ${theme.font.header};
+  font-weight: ${theme.font.black};
+`

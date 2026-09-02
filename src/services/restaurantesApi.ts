@@ -1,20 +1,17 @@
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { Restaurante } from '../model/Restaurante'
 
-const BASE_URL = 'https://api-ebac.vercel.app/api/efood/restaurantes'
+const api = createApi({
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://api-ebac.vercel.app/api/efood',
+  }),
+  endpoints: (builder) => ({
+    getRestaurants: builder.query<Restaurante[], void>({
+      query: () => 'restaurantes',
+    }),
+  }),
+})
 
-export async function getRestaurantes(): Promise<Restaurante[]> {
-  const resposta = await fetch(BASE_URL)
+export const { useGetRestaurantsQuery } = api
 
-  if (!resposta.ok) {
-    throw new Error('Não foi possível carregar os restaurantes')
-  }
-
-  return resposta.json()
-}
-
-export async function getRestaurantePorId(
-  id: number,
-): Promise<Restaurante | undefined> {
-  const restaurantes = await getRestaurantes()
-  return restaurantes.find((restaurante) => restaurante.id === id)
-}
+export default api

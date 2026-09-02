@@ -3,6 +3,12 @@
 ## [Unreleased]
 
 ## [1.4.3] - 2026-08-01
+### Add
+- Store;
+- Api;
+- Carrinho;
+
+## [1.4.3] - 2026-08-01
 ### Change
 - Layout do modal;
 

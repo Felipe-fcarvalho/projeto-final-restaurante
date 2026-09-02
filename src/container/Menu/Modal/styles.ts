@@ -36,6 +36,11 @@ export const Fechar = styled.button`
   border: none;
   color: ${theme.color.textSecondary};
   cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.5;
+  }
 `
 
 export const Foto = styled.img`

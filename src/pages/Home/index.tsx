@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import CardRestaurante from '../../components/CardRestaurante'
-import { getRestaurantes } from '../../services/restaurantesApi'
-import type { Restaurante } from '../../model/Restaurante'
+import { useGetRestaurantsQuery } from '../../services/restaurantesApi'
 import * as S from './styles'
 
 const Home = () => {
-  const [restaurantes, setRestaurantes] = useState<Restaurante[]>([])
-
-  useEffect(() => {
-    getRestaurantes().then(setRestaurantes)
-  }, [])
+  const { data: restaurantes, isLoading, isError } = useGetRestaurantsQuery()
 
   return (
     <>
       <Header />
       <S.Lista>
         <div className="container">
-          {restaurantes.map((restaurante) => (
+          {isLoading && <S.Message>Carregando restaurantes...</S.Message>}
+          {isError && (
+            <S.Message>Não foi possível carregar os restaurantes.</S.Message>
+          )}
+          {restaurantes?.map((restaurante) => (
             <CardRestaurante key={restaurante.id} {...restaurante} />
           ))}
         </div>

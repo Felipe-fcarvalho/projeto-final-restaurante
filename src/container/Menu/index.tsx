@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import type { Produto } from '../../model/Produto'
+import { useAppDispatch } from '../../store/hooks'
+import { add, open } from '../../store/reducers/cart'
 import ModalProduto from './Modal'
 import * as S from './styles'
 
@@ -8,6 +10,7 @@ type Props = {
 }
 
 const Menu = ({ produtos }: Props) => {
+  const dispatch = useAppDispatch()
   const [produtoSelecionado, setProdutoSelecionado] = useState<Produto | null>(
     null,
   )
@@ -33,6 +36,11 @@ const Menu = ({ produtos }: Props) => {
         <ModalProduto
           produto={produtoSelecionado}
           aoFechar={() => setProdutoSelecionado(null)}
+          aoAdicionar={() => {
+            dispatch(add(produtoSelecionado))
+            dispatch(open())
+            setProdutoSelecionado(null)
+          }}
         />
       )}
     </S.Section>

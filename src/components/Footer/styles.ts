@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import theme from '../../styles/theme'
 
 export const Container = styled.footer`
-  background-color: ${({ theme }) => theme.color.secondary};
+  background-color: ${theme.color.secondary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +28,8 @@ export const Text = styled.p`
   max-width: 480px;
   margin-top: 80px;
   margin-bottom: 40px;
-  color: ${({ theme }) => theme.color.primary};
-  font-weight: ${({ theme }) => theme.font.regular};
+  color: ${theme.color.primary};
+  font-weight: ${theme.font.regular};
   font-size: 10px;
   line-height: 100%;
   text-align: center;
