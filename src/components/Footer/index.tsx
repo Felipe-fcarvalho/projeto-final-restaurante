@@ -1,6 +1,5 @@
 import * as S from './styles'
 
-import logo from '../../assets/images/logo.svg'
 import instagram from '../../assets/icons/instagram.svg'
 import facebook from '../../assets/icons/facebook.svg'
 import twitter from '../../assets/icons/twitter.svg'
@@ -8,7 +7,7 @@ import twitter from '../../assets/icons/twitter.svg'
 const Footer = () => (
   <>
     <S.Container>
-      <S.Logo src={logo} alt="logo" />
+      <S.Logo to="/" />
       <S.Social>
         <li>
           <a href="#">
