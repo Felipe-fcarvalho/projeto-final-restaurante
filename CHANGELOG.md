@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
-## [1.4.3] - 2026-08-01
+## [1.5.4] - 2026-08-02
+### Add
+- Ajuste de responsividade
+
+## [1.5.3] - 2026-08-02
 ### Add
 - Store;
 - Api;

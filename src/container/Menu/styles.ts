@@ -11,6 +11,14 @@ export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: ${theme.padding.lg};
+
+  @media screen and (max-width: ${theme.breakpoints.desktop}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Card = styled.div`

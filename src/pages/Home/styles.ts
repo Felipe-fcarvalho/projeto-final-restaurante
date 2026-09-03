@@ -7,8 +7,9 @@ export const Lista = styled.section`
   padding-bottom: 120px;
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 80px 48px;
   }
 `

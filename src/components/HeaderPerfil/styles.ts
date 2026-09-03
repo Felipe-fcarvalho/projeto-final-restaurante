@@ -16,6 +16,10 @@ export const Container = styled.div`
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding-top: 44px;
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
 `
 
 export const Nav = styled(Link)`

@@ -33,6 +33,10 @@ const theme = {
     xl: '32px',
     xxl: '40px',
   },
+  breakpoints: {
+    desktop: '1024px',
+    tablet: '768px',
+  },
 }
 
 export default theme
